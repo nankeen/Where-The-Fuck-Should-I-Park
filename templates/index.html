@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='leaflet-realtime.js')}}"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+
+<body>
+	<section class="jumbotron">
+		<div class="container">
+			<div class="row text-center">
+				<h1>WHERE THE F#CK SHOULD I PARK?</h1>
+				<div id="get-location">
+					<button id ="get-location" class="btn btn-primary" onclick='currentbutton()'>USE MY F#CKING LOCATION</button>
+				</div>
+				<h2>OR</h2>
+					<input class="locator search input" placeholder="Search" type="text" id="locationsearch" autocomplete="off" list="suggestions" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'">
+			</div>
+		</div>
+	</section>
+
+	<div id="mapid"></div>
+	<script type="text/javascript" src="{{ url_for('static', filename='map-setup.js') }}"></script>
+
+</body>
+
+</html>
